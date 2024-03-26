@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:wght@300&family=Luckiest+Guy&family=Merriweather:ital@1&family=Montserrat:wght@700&family=Playball&family=Playfair+Display:ital@1&family=Raleway:wght@300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.imageup {
+  animation: moveUpDown 8s infinite; /* Adjust the duration as needed */
+}
+.imagedown {
+  animation: moveDownUp 8s infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveUpDown {
+  0%, 100% {
+      transform: translateY(0); /* Start and end position */
+  }
+  25% {
+      transform: translateY(10px); 
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes moveDownUp {
+  0%, 100% {
+    transform: translateY(0); /* Start and end position */
+}
+25% {
+    transform: translateY(-10px);
+}
+50% {
+  transform: translateY(10px);
+}
+}
