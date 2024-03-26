@@ -5,8 +5,29 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        scroll:{
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(-250px * 5))'}
+        }
   },
+      animation: {
+        'scroll-slow': 'scroll 30s linear infinite',
+      },
+
+      flexGrow: {
+        3: '3'
+      },
+
+      fontFamily:{
+        'Ephesis' :['Ephesis', 'cursive'],
+        'Merriweather':['Merriweather', 'serif'],
+        'Raleway':['Raleway', 'sans-serif'],
+        'Playball':['Playball', 'cursive'],
+        'LuckiestGuy':['Luckiest Guy', 'cursive']
+      }
+},
+},
   plugins: [],
 }
-
