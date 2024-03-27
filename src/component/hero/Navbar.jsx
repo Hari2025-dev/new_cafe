@@ -1,7 +1,10 @@
 import { FaCartShopping } from "react-icons/fa6";
 import { Link } from "react-scroll";
 import { Link as Naviglink } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 function Navbar() {
+  
   return (
     <nav className=" fixed top-0 w-full bg-slate-50 p-2 z-10 opacity-80">
       <div className="w-[90vw] mx-auto flex ">
@@ -40,11 +43,14 @@ function Navbar() {
       <h1 className="font-Ephesis text-5xl">Bon jour</h1>
       <h6 className="text-center">cafe</h6>
       </div>
-      <ul className="flex flex-1 justify-end gap-8 items-center">
+      <ul className="flex flex-1 justify-end gap-3 items-center">
         <li >
-          <div className="h-6 w-6 rounded-full bg-cyan-500 "></div>      
+          {/* <div className="h-6 w-6 rounded-full bg-cyan-500 "></div>       */}
+          <Naviglink to="/admin" className="">PRICE CHANGE</Naviglink>
         </li>
-        <Naviglink to="/takeaway">TAKEAWAY</Naviglink>
+        <li><Naviglink to="/adminbilling"  className="">QUANTITIES</Naviglink></li>
+        <li><Naviglink to="/takeaway" className="">TAKEAWAY</Naviglink></li>
+
         <li>
           <div className="relative flex ">
           <FaCartShopping size={24} />

@@ -50,8 +50,10 @@ function Login({setToken}) {
       <input className='my-3 h-8 w-[25rem] border-2' type="text" placeholder='Password' name='password' onChange={handleChange}/>
       </div>
       <button className='my-3  h-8 w-[25rem] bg-violet-700 text-white' onClick={handleSubmit}>Submit</button>
-      <h3 className='my-3'>Don't have an Account</h3>
-      <Link className='my-3' to='/signup'>Signup</Link>
+      <h3 className='my-1'>Don't have an Account</h3>
+      <Link className='text-blue-500' to='/signup'>Signup</Link>
+      <h3 className='my-1'>Admin: Email:letsee@gmail.com Password:123456</h3>
+      <h3>User: Email:tiher22859@arensus.com Password:123456</h3>
       </div>
     </div>
     </div>

@@ -20,7 +20,10 @@ import supabase from "./services/supabase"
 import AdminEdit from "./component/hero/AdminEdit"
 import AdminBilling from "./component/hero/AdminBilling"
 import { Toaster } from "react-hot-toast"
+import NotAuth from "./Pages/NotAuth"
 function App() {
+
+ 
   const[token,setToken] = useState(false)
   const[role,setRole] = useState('')
 
@@ -70,25 +73,7 @@ useEffect(() => {
 
 console.log(token)
 console.log(role[0])
-  // const {cartItems} = useContext(CartContext)
-  // const router = createBrowserRouter([
-  //   {
-  //     path:'/',
-  //     element:
-  //   },
-  //   {
-  //     path:'takeaway',
-  //     element:<Menu />
-  //   },
-  //   {
-  //     path:'login',
-  //     element:<Login />
-  //   },
-  //   {
-  //     path:'cart',
-  //     element:<Cart/>
-  //   }
-  // ])
+  
 
   
   
