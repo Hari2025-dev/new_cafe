@@ -21,6 +21,8 @@ import AdminEdit from "./component/hero/AdminEdit"
 import AdminBilling from "./component/hero/AdminBilling"
 import { Toaster } from "react-hot-toast"
 import NotAuth from "./Pages/NotAuth"
+import {Outlet} from 'react-router-dom'
+// import AdminProtect from "./component/hero/AdminProtect"
 function App() {
 
  
@@ -86,11 +88,15 @@ console.log(role[0])
           <Routes>
                 <Route path="/" element={<SignIn setToken={setToken} />}/>
                 <Route path="/home" element={<Home />}/>
-                {token && <Route path="/takeaway" element={<Menu />}/>}
-                <Route path="/signup" element={<Register />}/>
-                {token && <Route path="/cart" element={<Cart />}/>}
-                {role.role==='admin' && <Route path="admin" element={<AdminEdit />}/>}
-                {role.role==='admin' && <Route path="adminBilling" element={<AdminBilling />}/>}
+                <Route element={<UserAuth token={token}/>}>
+                  <Route path="/takeaway" element={<Menu />}/>
+                  <Route path="/signup" element={<Register />}/>
+                  <Route path="/cart" element={<Cart />}/>
+                </Route>
+                <Route element={<AdminProtect role={role}/>}>
+                  <Route path="admin" element={<AdminEdit />}/>
+                  <Route path="adminBilling" element={<AdminBilling />}/>
+                </Route>
           </Routes>
           <Toaster />
         </BrowserRouter>
@@ -101,3 +107,15 @@ console.log(role[0])
 }
 
 export default App
+
+const AdminProtect = ({role}) => {
+  return(
+     role?.role==="admin"?<Outlet />:<NotAuth />
+  )
+ }
+
+ const UserAuth = ({token}) => {
+  return (
+    token?<Outlet />:<NotAuth />
+  )
+ }

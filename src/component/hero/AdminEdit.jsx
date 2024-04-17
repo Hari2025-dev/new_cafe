@@ -1,9 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Category from './Category'
 import { CartContext } from '../../context/CartContext'
 import { updateItemPrice } from '../../services/apiMenu'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 function AdminEdit() {
+  useEffect(() => {
+    
+  },[])
   const{state,dispatch} = useContext(CartContext)
   const[editbox,setEditBox] = useState()
   const[editValue,setEditValue]=useState('')
